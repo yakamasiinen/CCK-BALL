@@ -1,4 +1,4 @@
-#define ZMK_POINTING_DEFAULT_MOVE_VAL 1000 // 600
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 1200 // 600
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 12   // 10
 
 #include <input/processors.dtsi>
@@ -13,14 +13,14 @@
 &msc_input_listener { input-processors = <&zip_scroll_scaler 2 1>; };
 
 &msc {
-    acceleration-exponent = <0>;      // 0
+    acceleration-exponent = <2>;      // 0
     time-to-max-speed-ms = <300>;       // 300
     delay-ms = <0>;                   // 0
 };
 
 &mmv {
-    time-to-max-speed-ms = <500>;
-    acceleration-exponent = <1>;
+    time-to-max-speed-ms = <300>;
+    acceleration-exponent = <2>;
     trigger-period-ms = <16>;
 };
 
@@ -31,7 +31,7 @@
     scroll_vertical_encoder: scroll_vertical_encoder {
         compatible = "zmk,behavior-sensor-rotate";
         #sensor-binding-cells = <0>;
-        bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
+        bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
         tap-ms = <100>;
     };
 
@@ -42,7 +42,16 @@
         bindings = <&msc SCRL_LEFT>, <&msc SCRL_RIGHT>;
         tap-ms = <100>;
     };
-    
+
+    // tab chnge by scroll
+    scroll_tab: behavior_sensor_rotate_mouse_wheel_up_down {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            bindings = <&kp LC(TAB)>, <&kp LC(LS(TAB))>;
+            // 追加: スクロールのタップ時間を設定 (20ms)
+            tap-ms = <20>;
+    };
+
     behaviors {
     };
 
@@ -58,19 +67,43 @@
 &kp LEFT_CONTROL  &kp LEFT_ALT  &kp ESC  &kp LEFT_SHIFT  &kp LEFT_CONTROL  &kp DELETE  &kp BACKSPACE  &lt 1 SPACE  &kp ENTER  &kp LBKT  &kp RBKT   &mo 5
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &scroll_vertical_encoder>;
         };
 
-        F_layers {
+        TENKEY_layers {
             bindings = <
-&kp F12  &kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &kp F6     &kp F7     &kp F8  &kp F9  &kp F10  &kp F11
-&kp A    &none   &none   &none   &none   &trans  &none      &none      &none   &trans  &trans   &trans
-&trans   &none   &none   &none   &none   &trans  &mkp LCLK  &mkp RCLK  &trans  &trans  &trans   &trans
-&trans   &trans  &trans  &trans  &trans  &none   &none      &none      &trans  &trans  &none    &trans
-&trans   &trans  &trans  &trans  &trans  &trans  &mkp LCLK  &mkp RCLK  &trans  &trans  &trans   &trans
+&kp F1  &kp F2  &kp F3     &kp F4     &kp F5     &kp F6        &kp F7  &kp F8  &kp F9  &kp F10  &kp F11  &kp F12
+&trans  &trans  &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp KP_PLUS   &trans  &trans  &trans  &trans   &trans   &trans      
+&trans  &trans  &kp KP_N4  &kp KP_N5  &kp KP_N6  &kp KP_MINUS  &kp LC(LS(TAB))  &kp UP_ARROW    &kp LC(TAB)  &trans   &trans   &trans
+&trans  &trans  &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp KP_DOT    &kp LEFT_ARROW   &kp DOWN_ARROW  &kp RIGHT_ARROW  &trans   &trans   &trans
+&trans  &trans  &kp KP_N0  &kp LNLCK  &trans     &trans        &trans  &trans  &trans  &trans   &trans   &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+        };
+
+        MOUSE_layers {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans  &trans     &trans     &trans     &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans     &trans     &trans     &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &mkp MB5   &trans     &trans     &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &mkp MB4   &kp PSCRN  &trans     &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &mo 4   &mkp LCLK  &mkp MB3   &mkp RCLK  &trans  &trans  &trans
+            >;
+
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &scroll_vertical_encoder>;
+        };
+
+        scroll-layers {
+            bindings = <
+&trans  &trans  &trans  &trans           &trans          &trans           &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans           &trans          &trans           &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &kp LC(LS(TAB))  &kp UP_ARROW    &kp LC(TAB)      &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &kp LEFT_ARROW   &kp DOWN_ARROW  &kp RIGHT_ARROW  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans           &trans          &trans           &trans  &trans  &trans  &trans  &trans  &trans
+            >;
+
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &scroll_tab>;
         };
 
         blutooth-layers {
@@ -82,32 +115,9 @@
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
-        };
-
-        scroll-layers {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-            >;
-
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
-        };
-
-        snipe-layers {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-            >;
-
-            sensor-bindings = <&scroll_vertical_encoder>,   // 编码器1：上下滚动
-                             <&scroll_horizontal_encoder>;  // 编码器2：左右滚动
+            sensor-bindings =
+                <&scroll_vertical_encoder>,    // 编码器1：上下滚动,
+                <&scroll_horizontal_encoder>;  // 编码器2：左右滚动
         };
     };
 };
