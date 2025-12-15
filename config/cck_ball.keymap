@@ -109,8 +109,7 @@
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
             >;
-            sensor-bindings =
-                <&scroll_vertical_encoder>, <&scroll_horizontal_encoder>;
+            sensor-bindings = <&scroll_vertical_encoder &scroll_horizontal_encoder>;
         };
     };
 };
