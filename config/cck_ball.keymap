@@ -88,7 +88,7 @@
 &trans  &trans  &trans  &trans  &trans  &mo 4   &mkp LCLK  &mkp MB3  &mkp RCLK  &trans  &trans  &trans
             >;
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &scroll_tab>;
-        };,,
+        };
 
         scroll-layers {
             bindings = <
