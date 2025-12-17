@@ -73,11 +73,11 @@
 
         MOUSE_layers {
             bindings = <
-&none   &none   &none   &none   &none   &none            &none      &none     &none      &none   &none   &none 
-&trans  &trans  &trans  &trans  &trans  &trans           &trans     &trans    &trans     &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans           &mkp MB5   &trans    &trans     &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans           &mkp MB4   &lt 4 M   &trans     &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &lt 4 BACKSPACE  &mkp LCLK  &mkp MB3  &mkp RCLK  &trans  &trans  &trans
+&none   &none   &none   &none   &none   &none         &none      &none     &none      &none   &none   &none 
+&trans  &trans  &trans  &trans  &trans  &trans        &trans     &trans    &trans     &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans        &mkp MB5   &trans    &trans     &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans        &mkp MB4   &lt 4 M   &trans     &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &lt 4 DELETE  &mkp LCLK  &mkp MB3  &mkp RCLK  &trans  &trans  &trans
             >;
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp LC(LS(TAB)) LC(TAB)>;
         };
