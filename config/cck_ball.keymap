@@ -73,7 +73,7 @@
 
         MOUSE_layers {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans     &trans    &trans     &trans  &trans  &trans
+&none   &none   &none   &none   &none   &none   &none      &none     &none      &none   &none   &none 
 &trans  &trans  &trans  &trans  &trans  &trans  &trans     &trans    &trans     &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &mkp MB5   &trans    &trans     &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &mkp MB4   &mo 4     &to 0      &trans  &trans  &trans
