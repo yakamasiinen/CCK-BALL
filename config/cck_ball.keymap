@@ -52,15 +52,8 @@ behaviors {
         quick-release;
         ignore-modifiers;
     };
-    scroll_start: scroll_start {
-        compatible = "zmk,behavior-macro";
-        #binding-cells = <0>;
-        bindings = 
-            <&tog 2>,   // 1. まずオートマウスの邪魔を止める（レイヤー2をオフにする）
-            <&mo 4>;    // 2. そのままスクロールモード（レイヤー4）に入る
-        label = "SCROLL_START";
-    };
 };
+
 macros {
     click_and_exit: click_and_exit {
         label = "CLICK_AND_EXIT";
@@ -81,11 +74,11 @@ macros {
 
         QWERTY {
             bindings = <
-&kp N1            &kp N2        &kp N3   &kp N4          &kp N5            &kp N6      &kp N7         &kp N8       &kp N9     &kp N0    &kp MINUS  &kp EQUAL
-&kp TAB           &kp Q         &kp W    &kp E           &kp R             &kp T       &kp Y          &kp U        &kp I      &kp O     &kp P      &kp BSLH
-&kp LEFT_WIN      &kp A         &kp S    &kp D           &kp F             &kp G       &kp H          &kp J        &kp K      &kp L     &kp SEMI   &kp SQT
-&kp LEFT_SHIFT    &kp Z         &kp X    &kp C           &kp V             &kp B       &kp N          &lt 4 M      &kp COMMA  &kp DOT   &kp FSLH   &kp PAUSE_BREAK
-&kp LEFT_CONTROL  &kp LEFT_ALT  &kp ESC  &kp LEFT_SHIFT  &kp LEFT_CONTROL  &kp DELETE  &kp BACKSPACE  &lt 1 SPACE  &kp ENTER  &kp LBKT  &kp RBKT   &mo 5
+&kp N1            &kp N2        &kp N3   &kp N4          &kp N5            &kp N6        &kp N7         &kp N8       &kp N9     &kp N0    &kp MINUS  &kp EQUAL
+&kp TAB           &kp Q         &kp W    &kp E           &kp R             &kp T         &kp Y          &kp U        &kp I      &kp O     &kp P      &kp BSLH
+&kp LEFT_WIN      &kp A         &kp S    &kp D           &kp F             &kp G         &kp H          &kp J        &kp K      &kp L     &kp SEMI   &kp SQT
+&kp LEFT_SHIFT    &kp Z         &kp X    &kp C           &kp V             &kp B         &kp N          &lt 4 M      &kp COMMA  &kp DOT   &kp FSLH   &kp PAUSE_BREAK
+&kp LEFT_CONTROL  &kp LEFT_ALT  &kp ESC  &kp LEFT_SHIFT  &kp LEFT_CONTROL  &lt 4 DELETE  &kp BACKSPACE  &lt 1 SPACE  &kp ENTER  &kp LBKT  &kp RBKT   &mo 5
             >;
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp LC(LS(TAB)) LC(TAB)>;
         };
@@ -104,11 +97,11 @@ macros {
         MOUSE_layers {
             label = "MOUSE";
             bindings = <
-&none   &none   &none   &none   &none   &none         &none            &none     &none     &none   &none   &none 
-&trans  &trans  &trans  &trans  &trans  &trans        &trans           &trans    &trans    &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans        &mkp MB5         &trans    &trans    &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans        &mkp MB4         &mo 4     &trans    &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &scroll_start  &click_and_exit  &mkp MB3  &mkp MB2  &trans  &trans  &trans
+&none   &none   &none   &none   &none   &none   &none            &none     &none     &none   &none   &none 
+&trans  &trans  &trans  &trans  &trans  &trans  &trans           &trans    &trans    &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &mkp MB5         &trans    &trans    &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &mkp MB4         &trans    &trans    &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &click_and_exit  &mkp MB3  &mkp MB2  &trans  &trans  &trans
             >;
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp LC(LS(TAB)) LC(TAB)>;
         };
