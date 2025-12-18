@@ -44,14 +44,21 @@
     };
 
 behaviors {
-  sl_mouse: sticky_layer_for_mouse {
-    compatible = "zmk,behavior-sticky-key";
-    #binding-cells = <1>;
-    bindings = <&mo>;
-    release-after-ms = <200>; // 200msだけクリック用レイヤに移動する（必要に応じて時間を変更）
-    quick-release;
-    ignore-modifiers;
-  };
+    sl_mouse: sticky_layer_for_mouse {
+        compatible = "zmk,behavior-sticky-key";
+        #binding-cells = <1>;
+        bindings = <&mo>;
+        release-after-ms = <200>; // 200msだけクリック用レイヤに移動する（必要に応じて時間を変更）
+        quick-release;
+        ignore-modifiers;
+    };
+    scrl_tap: scroll_tap {
+        compatible = "zmk,behavior-hold-tap";
+        #binding-cells = <2>;
+        flavor = "hold-preferred";
+        tapping-term-ms = <200>;
+        bindings = <&mo>, <&kp>; // ホールドでレイヤー移動、タップでキー入力
+    };
 };
 macros {
     click_and_exit: click_and_exit {
