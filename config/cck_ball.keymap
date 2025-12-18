@@ -68,9 +68,6 @@ macros {
     };
 };
 
-    behaviors {
-    };
-
     keymap {
         compatible = "zmk,keymap";
 
@@ -102,7 +99,7 @@ macros {
 &none   &none   &none   &none   &none   &none         &none            &none     &none     &none   &none   &none 
 &trans  &trans  &trans  &trans  &trans  &trans        &trans           &trans    &trans    &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans        &mkp MB5         &trans    &trans    &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans        &mkp MB4         &lt 5 M   &trans    &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans        &mkp MB4         &mo 5     &trans    &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &lt 5 DELETE  &click_and_exit  &mkp MB3  &mkp MB2  &trans  &trans  &trans
             >;
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp LC(LS(TAB)) LC(TAB)>;
