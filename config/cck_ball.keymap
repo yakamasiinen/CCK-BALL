@@ -52,12 +52,13 @@ behaviors {
         quick-release;
         ignore-modifiers;
     };
-    scrl_tap: scroll_tap {
-        compatible = "zmk,behavior-hold-tap";
-        #binding-cells = <2>;
-        flavor = "hold-preferred";
-        tapping-term-ms = <200>;
-        bindings = <&mo>, <&kp>; // ホールドでレイヤー移動、タップでキー入力
+    scroll_start: scroll_start {
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings = 
+            <&tog 2>,   // 1. まずオートマウスの邪魔を止める（レイヤー2をオフにする）
+            <&mo 4>;    // 2. そのままスクロールモード（レイヤー4）に入る
+        label = "SCROLL_START";
     };
 };
 macros {
@@ -107,7 +108,7 @@ macros {
 &trans  &trans  &trans  &trans  &trans  &trans        &trans           &trans    &trans    &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans        &mkp MB5         &trans    &trans    &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans        &mkp MB4         &mo 4     &trans    &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &lt 4 DELETE  &click_and_exit  &mkp MB3  &mkp MB2  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &scroll_start  &click_and_exit  &mkp MB3  &mkp MB2  &trans  &trans  &trans
             >;
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp LC(LS(TAB)) LC(TAB)>;
         };
