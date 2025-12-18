@@ -97,17 +97,19 @@ macros {
         };
 
         MOUSE_layers {
+            label = "MOUSE";
             bindings = <
-&none   &none   &none   &none   &none   &none         &none            &none      &none       &none   &none   &none 
-&trans  &trans  &trans  &trans  &trans  &trans        &trans           &trans     &trans      &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans        &mkp MB5         &trans     &trans      &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans        &mkp MB4         &lt 5 M    &trans      &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &lt 5 DELETE  &click_and_exit  &mkp MB3   &lt 3 RCLK  &trans  &trans  &trans
+&none   &none   &none   &none   &none   &none         &none            &none     &none     &none   &none   &none 
+&trans  &trans  &trans  &trans  &trans  &trans        &trans           &trans    &trans    &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans        &mkp MB5         &trans    &trans    &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans        &mkp MB4         &lt 5 M   &trans    &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &lt 5 DELETE  &click_and_exit  &mkp MB3  &mkp MB2  &trans  &trans  &trans
             >;
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp LC(LS(TAB)) LC(TAB)>;
         };
 
         doubleclick_layers {
+            label = "MOUSE3";
             bindings = <
 &none   &none   &none   &none   &none   &none   &none            &none   &none   &none   &none   &none 
 &trans  &trans  &trans  &trans  &trans  &trans  &trans           &trans  &trans  &trans  &trans  &trans
