@@ -55,9 +55,10 @@ behaviors {
     lt_mouse_layer: lt_mouse_layer {
         compatible = "zmk,behavior-hold-tap";
         label = "LAYER_TAP_MOUSE";
-        bindings = <&mo>, <&mkp>;
-        #binding-cells = <2>;
-        tapping-term-ms = <200>; // 200ms以上押し続けるとmo（必要に応じて時間を変更）
+        bindings = <&mo>, <&mkp>; 
+        #binding-cells = <2>; 
+        tapping-term-ms = <200>;
+        flavor = "tap-preferred"; // タップを確実に拾う設定
     };
 };
 
