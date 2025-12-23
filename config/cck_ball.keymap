@@ -58,7 +58,7 @@ behaviors {
         bindings = <&mo>, <&mkp>; 
         #binding-cells = <2>; 
         tapping-term-ms = <200>;
-        flavor = "tap-preferred"; // タップを確実に拾う設定
+        flavor = "balanced";
     };
 };
 
