@@ -52,13 +52,6 @@ behaviors {
         quick-release;
         ignore-modifiers;
     };
-    lt_mouse_layer: lt_mouse_layer {
-      compatible = "zmk,behavior-hold-tap";
-      label = "LAYER_TAP_MOUSE";
-      bindings = <&mo>, <&mkp>;
-      #binding-cells = <2>;
-      tapping-term-ms = <200>;
-    };
 };
 
 macros {
@@ -73,14 +66,6 @@ macros {
             , <&macro_tap &to 0> // デフォルトレイヤーに戻る
             , <&macro_tap &sl_mouse 5> // 一瞬だけクリック用レイヤに飛ぶ
             ;
-    };
-    lt_tenkey_mb3: lt_tenkey_mb3 { // 押している間はレイヤー1へ、タップならMB3
-        compatible = "zmk,behavior-macro";
-        #binding-cells = <0>;
-        bindings = <&macro_press &to 1>, 
-                   <&macro_pause_for_release>, 
-                   <&macro_release &to 0>,
-                   <&macro_tap &mkp MB3>;
     };
 };
 
@@ -98,18 +83,6 @@ macros {
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp LC(LS(TAB)) LC(TAB)>;
         };
 
-        MOUSE_layers {
-            label = "MOUSE";
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans        &trans           &trans                 &trans    &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans        &trans           &trans                 &trans    &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans        &mkp MB5         &trans                 &trans    &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans        &mkp MB4         &lt 3 M                &trans    &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &lt 3 DELETE  &click_and_exit  &lt_mouse_layer 2 MB3  &mkp MB2  &trans  &trans  &trans
-            >;
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp LC(LS(TAB)) LC(TAB)>;
-        };
-
         TENKEY_layers {
             bindings = <
 &kp F1  &kp F2  &kp F3     &kp F4     &kp F5     &kp F6        &kp F7           &kp F8          &kp F9           &kp F10  &kp F11  &kp F12
@@ -121,6 +94,17 @@ macros {
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
         };
 
+        MOUSE_layers {
+            label = "MOUSE";
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans        &trans           &trans    &trans    &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans        &trans           &trans    &trans    &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans        &mkp MB5         &trans    &trans    &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans        &mkp MB4         &lt 3 M   &trans    &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &lt 3 DELETE  &click_and_exit  &mkp MB3  &mkp MB2  &trans  &trans  &trans
+            >;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp LC(LS(TAB)) LC(TAB)>;
+        };
 
         scroll-layers {
             bindings = <
@@ -147,11 +131,11 @@ macros {
         doubleclick_layers {
             label = "MOUSE3";
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans        &trans           &trans                 &trans    &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans        &trans           &trans                 &trans    &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans        &trans           &trans                 &trans    &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans        &trans           &lt 3 M                &trans    &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &lt 3 DELETE  &click_and_exit  &lt_mouse_layer 1 MB3  &mkp MB2  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans        &trans           &trans    &trans    &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans        &trans           &trans    &trans    &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans        &trans           &trans    &trans    &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans        &trans           &lt 3 M   &trans    &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &lt 3 DELETE  &click_and_exit  &mkp MB3  &mkp MB2  &trans  &trans  &trans
             >;
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp LC(LS(TAB)) LC(TAB)>;
         };
