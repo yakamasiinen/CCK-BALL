@@ -124,7 +124,7 @@ macros {
 &trans  &trans  &trans  &trans  &trans  &lt 3 DELETE  &click_and_exit  &mkp MB3  &mkp MB2  &trans  &trans  &trans
             >;
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp LC(LS(TAB)) LC(TAB)>;
-        }
+        };
 
         scroll-layers {
             bindings = <
