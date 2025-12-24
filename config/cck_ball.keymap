@@ -43,6 +43,17 @@
         tap-ms = <0>;
     };
 
+&zip_temp_layer {
+    excluded-positions = <
+        30 // H
+        42 // N
+        43 // M
+        54 // BACKSAPACE
+        55 // SPACE
+        56 // ENTER
+    >;
+};
+
 behaviors {
     sl_mouse: sticky_layer_for_mouse {
         compatible = "zmk,behavior-sticky-key";
