@@ -12,7 +12,8 @@
 
 &msc_input_listener { input-processors = <&zip_scroll_scaler 2 1>; };
 
-&zip_temp_layer {
+&zip_temp_layer {    
+    require-prior-idle-ms = <200>;
     excluded-positions = <
         30 // H
         42 // N
