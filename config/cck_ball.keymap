@@ -12,6 +12,7 @@
 
 &msc_input_listener { input-processors = <&zip_scroll_scaler 2 1>; };
 
+// オートマウスレイヤー自動離脱
 &zip_temp_layer {    
     require-prior-idle-ms = <200>;
     excluded-positions = <
@@ -56,6 +57,7 @@
         tap-ms = <0>;
     };
 
+// オートマウス　クリック用レイヤー
 behaviors {
     sl_mouse: sticky_layer_for_mouse {
         compatible = "zmk,behavior-sticky-key";
