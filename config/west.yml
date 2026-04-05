@@ -11,6 +11,12 @@ manifest:
       revision: main
       import: app/west.yml
 
+    # ↓これが重要（ZMKのboardsを有効化）
+    - name: zmk-boards
+      remote: zmkfirmware
+      revision: main
+      path: modules/zmk
+
     - name: zmk-pmw3610-driver
       remote: DoctorWangWang
       revision: main
