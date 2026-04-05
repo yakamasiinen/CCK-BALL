@@ -7,14 +7,19 @@ manifest:
       url-base: https://github.com/DoctorWangWang
 
   projects:
-    - name: zmk
-      remote: zmkfirmware
-      revision: main
-      import: app/west.yml
+projects:
+  - name: zmk
+    remote: zmkfirmware
+    revision: main
+    import: app/west.yml
 
-    - name: zmk-pmw3610-driver
-      remote: DoctorWangWang
-      revision: main
+  - name: zmk-config
+    remote: zmkfirmware
+    revision: main
+
+  - name: zmk-pmw3610-driver
+    remote: DoctorWangWang
+    revision: main
 
   self:
     path: config
