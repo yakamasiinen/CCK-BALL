@@ -15,9 +15,5 @@ manifest:
       remote: DoctorWangWang
       revision: main
 
-    - name: zmk-boards
-      remote: zmkfirmware
-      revision: main
-
   self:
     path: config
