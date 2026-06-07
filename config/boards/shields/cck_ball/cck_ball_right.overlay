@@ -57,6 +57,8 @@
         spi-max-frequency = <2000000>;
         irq-gpios = <&gpio0 6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
         motion-gpios = <&gpio0 6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+        zephyr,axis-x = <&trackball_x>;
+        zephyr,axis-y = <&trackball_y>;
         scroll-layers = <3>;
     };
 };
@@ -103,9 +105,15 @@
     };
 };
 
-
-
 / {
+    trackball_x: trackball_x {
+        compatible = "zmk,input-split-listener";
+    };
+
+    trackball_y: trackball_y {
+        compatible = "zmk,input-split-listener";
+    };
+
     trackball_listener {
         compatible = "zmk,input-listener";
         device = <&trackball>;
