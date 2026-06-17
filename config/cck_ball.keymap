@@ -96,24 +96,24 @@ macros {
 
         QWERTY {
             bindings = <
-&kp N1        &kp N2           &kp N3  &kp N4          &kp N5            &kp N6        &kp N7         &kp N8       &kp N9     &kp N0    &kp MINUS  &kp EQUAL
+&trans  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5  &kp N6  &kp N7  &kp N8  &kp N9  &kp N0  &trans
 &kp TAB       &kp Q            &kp W   &kp E           &kp R             &kp T         &kp Y          &kp U        &kp I      &kp O     &kp P      &kp BSLH
 &kp LEFT_WIN  &kp A            &kp S   &kp D           &kp F             &kp G         &kp H          &kp J        &kp K      &kp L     &kp SEMI   &kp SQT
 &kp LEFT_ALT  &kp Z            &kp X   &kp C           &kp V             &kp B         &kp N          &kp M        &kp COMMA  &kp DOT   &kp FSLH   &kp EQUAL
 &kp ESC       &kp PAUSE_BREAK  &mo 4   &kp LEFT_SHIFT  &kp LEFT_CONTROL  &lt 3 DELETE  &kp BACKSPACE  &lt 1 SPACE  &kp ENTER  &kp LBKT  &kp RBKT   &kp MINUS
             >;
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp LC(LS(TAB)) LC(TAB)>;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp C_BRI_UP C_BRI_DN>;
         };
 
         TENKEY_layers {
             bindings = <
 &kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &kp F6  &kp F7  &kp F8  &kp F9  &kp F10  &kp F11  &kp F12
-&trans  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5  &kp N6  &kp N7  &kp N8  &kp N9   &kp N0   &trans      
-&trans  &trans  &trans  &trans  &trans  &trans  &kp LC(LS(TAB))  &kp UP_ARROW    &kp LC(TAB)      &trans     &trans    &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &kp LEFT_ARROW   &kp DOWN_ARROW  &kp RIGHT_ARROW  &trans     &trans    &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans           &trans          &trans           &kp LPAR   &kp RPAR  &trans
+&trans  &trans  &kp N7  &kp N8  &kp N9  &trans  &kp RA(LS(TAB))   &LG(DOWN_ARROW)  &kpp RA(TAB)     &trans     &trans    &trans      
+&trans  &trans  &kp N4  &kp N5  &kp N6  &trans  &kp LC( LS(TAB))  &kp UP_ARROW     &kp LC(TAB)      &trans     &trans    &trans
+&trans  &trans  &kp N1  &kp N2  &kp N3  &trans  &kp LEFT_ARROW    &kp DOWN_ARROW   &kp RIGHT_ARROW  &trans     &trans    &trans
+&trans  &trans  &kp N0  &trans  &trans  &trans  &trans            &trans           &trans           &kp LPAR   &kp RPAR  &trans
             >;
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp C_BRI_UP C_BRI_DN>;
         };
 
         MOUSE_layers {
@@ -123,9 +123,9 @@ macros {
 &trans  &trans  &trans  &trans  &trans  &trans        &trans           &trans    &trans    &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans        &mkp MB5         &trans    &trans    &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans        &mkp MB4         &lt 3 M   &trans    &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &lt 3 DELETE  &click_and_exit  &mkp MB3  &mkp MB2  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &lt 3 DELETE  &click_and_exit  &mkp MB2  &mkp MB3  &trans  &trans  &trans
             >;
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp LC(LS(TAB)) LC(TAB)>;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp C_BRI_UP C_BRI_DN>;
         };
 
         scroll-layers {
@@ -136,7 +136,7 @@ macros {
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
             >;
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN  &inc_dec_kp LC(LS(TAB)) LC(TAB)>;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN  &inc_dec_kp C_BRI_UP C_BRI_DN>;
         };
 
         blutooth-layers {
@@ -159,7 +159,7 @@ macros {
 &trans  &trans  &trans  &trans  &trans  &trans        &trans           &lt 3 M   &trans    &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &lt 3 DELETE  &click_and_exit  &mkp MB3  &mkp MB2  &trans  &trans  &trans
             >;
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp LC(LS(TAB)) LC(TAB)>;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp C_BRI_UP C_BRI_DN>;
         };
     };
 };
