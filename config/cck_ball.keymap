@@ -113,7 +113,7 @@ macros {
 &trans  &trans  &trans  &trans  &trans  &kp LA(TAB)      &kp LEFT_ARROW   &kp DOWN_ARROW  &kp RIGHT_ARROW  &trans    &trans    &trans
 &trans  &trans  &trans  &trans  &trans  &trans           &trans           &trans          &trans           &kp LPAR  &kp RPAR  &trans
             >;
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp C_BRI_UP C_BRI_DN>;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp LA(LS(TAB)) LA(TAB)>;
         };
 
         MOUSE_layers {
