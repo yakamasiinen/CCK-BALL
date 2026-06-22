@@ -127,17 +127,6 @@ macros {
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp LA(LS(TAB)) LA(TAB)>;
         };
 
-        SYMBOL_layers {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans        &trans           &trans    &trans    &trans  &trans  &trans
-&kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &kp F6  &kp F7  &kp F8  &kp F9  &kp F10  &kp F11  &kp F12
-&trans  &kp KP_PLUS  &kp MINUS  &kp KP_MULTIPLY  &kp KP_DIVIDE  &kp KP_EQUAL  &kp LC(LS(TAB))  &kp UP_ARROW    &kp LC(TAB)      &kp SQT   &trans     &trans
-&trans  &trans       &trans     &trans           &trans         &kp BSLH      &kp LEFT_ARROW   &kp DOWN_ARROW  &kp RIGHT_ARROW  &trans    &trans     &trans
-&trans  &trans       &trans     &trans           &trans         &trans        &trans           &trans          &trans           &kp LPAR  &kp RPAR   &trans
-            >;
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp LA(LS(TAB)) LA(TAB)>;
-        };
-
         MOUSE_layers {
             label = "MOUSE";
             bindings = <
