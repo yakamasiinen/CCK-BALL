@@ -96,11 +96,11 @@ macros {
 
         QWERTY {
             bindings = <
-&none  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5  &kp N6  &kp N7  &kp N8  &kp N9  &kp N0  &none
-&kp TAB       &kp Q            &kp W   &kp E           &kp R             &kp T         &kp Y          &kp U        &kp I      &kp O     &kp P      &kp BSLH
-&kp LEFT_WIN  &kp A            &kp S   &kp D           &kp F             &kp G         &kp H          &kp J        &kp K      &kp L     &kp SEMI   &kp SQT
-&kp LEFT_ALT  &kp Z            &kp X   &kp C           &kp V             &kp B         &kp N          &kp M        &kp COMMA  &kp DOT   &kp FSLH   &kp EQUAL
-&kp ESC       &kp PAUSE_BREAK  &mo 4   &kp LEFT_SHIFT  &kp LEFT_CONTROL  &lt 3 DELETE  &kp BACKSPACE  &lt 1 SPACE  &kp ENTER  &kp LBKT  &kp RBKT   &kp MINUS
+&kp GRAVE  &kp N1           &kp N2   &kp N3     &kp N4         &kp N5        &kp N6         &kp N7       &kp N8          &kp N9    &kp N0     &kp MINUS
+&kp TAB    &kp Q            &kp W    &kp E      &kp R          &kp T         &kp Y          &kp U        &kp I           &kp O     &kp P      &kp EQUAL
+&kp LWIN   &kp A            &kp S    &kp D      &kp F          &kp G         &kp H          &kp J        &kp K           &kp L     &kp SEMI   &kp SQT
+&kp LALT   &kp Z            &kp X    &kp C      &kp V          &kp B         &kp N          &lt 3 M      &kp COMMA       &kp DOT   &kp FSLH   &kp BSLH
+&kp ESC    &kp PAUSE_BREAK  &kp TAB  &kp LSHFT  &mt LCTRL TAB  &lt 3 DELETE  &kp BACKSPACE  &lt 1 SPACE  &mt RGUI ENTER  &kp LBKT  &kp RBKT   &mo 4
             >;
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp C_BRI_UP C_BRI_DN>;
         };
@@ -126,6 +126,7 @@ macros {
 &trans  &trans  &trans  &trans  &trans  &lt 3 DELETE  &click_and_exit  &mkp MB3  &mkp MB2  &trans  &trans  &trans
             >;
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp C_BRI_UP C_BRI_DN>;
+
         };
 
         scroll-layers {
