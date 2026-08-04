@@ -151,7 +151,7 @@ macros {
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN  &inc_dec_kp C_BRI_UP C_BRI_DN>;
         };
 
-        blutooth-layers {
+        bluetooth-layers {
             bindings = <
 &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &bt BT_SEL 5  &trans  &trans  &bt BT_CLR_ALL  &bt BT_CLR  &bt BT_PRV  &bt BT_NXT
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
