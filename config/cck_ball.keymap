@@ -107,6 +107,7 @@ macros {
 
         QWERTY {
             bindings = <
+&kp GRAVE  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5  &kp N6  &kp N7  &kp N8  &kp N9  &kp N0  &kp PLUS
 &kp TAB          &kp Q      &kp W     &kp E      &kp R          &kp T         &kp Y          &kp U        &kp I           &kp O     &kp P      &kp EQUAL
 &kp BSLH         &kp A      &kp S     &kp D      &kp F          &kp G         &kp H          &kp J        &kp K           &kp L     &kp SEMI   &kp SQT
 &kp LALT         &kp Z      &kp X     &kp C      &kp V          &kp B         &kp N          &kp M        &kp COMMA       &kp DOT   &kp FSLH   &bslh_excl
@@ -117,6 +118,7 @@ macros {
 
         TENKEY_layers {
             bindings = <
+&kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &kp F6  &kp F7  &kp F8  &kp F9  &kp F10  &kp F11  &kp F12
 &trans  &trans   &trans  &kp N7   &kp N8   &kp N9   &kp PLUS         &kp MINUS       &kp STAR         &kp FSLH   &kp KP_EQUAL  &trans
 &trans  &trans   &trans  &kp N4   &kp N5   &kp N6   &kp LC(LS(TAB))  &kp UP_ARROW    &kp LC(TAB)      &kp CARET  &trans        &trans
 &trans  &trans   &kp N0  &kp N1   &kp N2   &kp N3   &kp LEFT_ARROW   &kp DOWN_ARROW  &kp RIGHT_ARROW  &trans     &trans        &trans
@@ -128,6 +130,7 @@ macros {
         MOUSE_layers {
             label = "MOUSE";
             bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans        &trans           &trans    &trans    &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans        &trans           &trans    &trans    &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans        &mkp MB5         &trans    &trans    &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans        &mkp MB4         &lt 3 M   &trans    &trans  &trans  &trans
@@ -143,6 +146,7 @@ macros {
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
             >;
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN  &inc_dec_kp C_BRI_UP C_BRI_DN>;
         };
@@ -153,6 +157,7 @@ macros {
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
             >;
             sensor-bindings =  <&scroll_vertical_encoder &scroll_horizontal_encoder>;
         };
@@ -160,6 +165,7 @@ macros {
         doubleclick_layers {
             label = "MOUSE3";
             bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans        &trans           &trans    &trans    &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans        &trans           &trans    &trans    &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans        &trans           &trans    &trans    &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans        &trans           &lt 3 M   &trans    &trans  &trans  &trans
